@@ -1,0 +1,41 @@
+abstract classes don't exist
+
+properties are defined:
+  attr_reader :<variable> (getter)
+  attr_writer :<variable> (setter)
+  attr_accessor :<variable> (getter/setter)
+  
+  e.g.:
+  class Person
+    def initialize(name)
+      @name = name
+    end
+
+    attr_accessor :name
+  end
+  
+there is no concept of abstract class
+overriding is just defining a method w/ the same name
+calling the base implementation is just using "super":
+
+  class Person
+    def initialize(name)
+      @name = name
+    end
+
+    def talk()
+      puts "hello my name is #{self.name}"
+    end
+
+    attr_accessor :name
+  end
+
+  class Male < Person
+    def talk()
+      puts "grrrr... hey my name is #{self.name}"
+      super
+    end
+  end
+
+
+
